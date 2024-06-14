@@ -7,7 +7,6 @@ function doGet()
 
 function doPost(datos)
 {
-
 return HtmlService.createTemplateFromFile('web').evaluate().setTitle('Agenda Google Apps Script');
 }
 
@@ -22,7 +21,11 @@ function obtenerContactos()
    
 }
 
-function insertarContactos(nombre, apellidos, correo, telf)
+function insertarContacto(nombre, apellidos, correo, telf)
 {
    HOJA.appendRow([nombre, apellidos, correo, telf]);
+}
+function borrarContacto(numFila)
+{
+    HOJA.deleteRow(numFila);
 }
