@@ -72,7 +72,54 @@ document.getElementById('imgForm').addEventListener('drop', function(event)
   //mostramos imagen y quitamos zona de carga
   this.style.filter = 'opacity(100%)';
   document.getElementById('lottieForm').style.display = 'none';
+
 });
+
+document.getElementById('copiarCorreo').addEventListener('click', function(event)
+{
+  copiarContenido(this, 'correoInfoContacto');
+});
+
+document.getElementById('copiarTelf').addEventListener('click', function(event)
+{
+  copiarContenido(this, 'telfInfoContacto');
+});
+
+function copiarContenido(icono, id)
+{
+  let texto = document.getElementById(id).textContent;
+
+  navigator.clipboard.writeText(texto)
+  .then(() =>
+{
+  icono.classList.remove('bi-clipboard');
+  icono.classList.add('bi-check-lg');
+  icono.title = 'Copiado';
+  bootstrap.Tooltip.getOrCreateInstance(this).show();
+
+  restaurarIcono(icono);
+})
+}
+
+function restaurarIcono(icono)
+{
+  setTimeout(function()
+  {
+    icono.classList.remove('bi-check-lg');
+    icono.classList.add('bi-clipboard');
+    icono.title = '';
+    bootstrap.Tooltip.getInstance(icono).dispose();
+
+  }, 2000);
+
+}
+
+
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+
 
 
   function subirArriba()
@@ -276,6 +323,7 @@ document.getElementById('imgForm').addEventListener('drop', function(event)
          var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
          return new bootstrap.Popover(popoverTriggerEl)
       })
+
         
 
 </script>

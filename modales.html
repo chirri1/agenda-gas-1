@@ -1,6 +1,6 @@
 <script>
 
-  const IMAGEN_PERFIL_INICIO = 'https://drive.google.com/uc?export=view&id=1VjCI246mVYleZCD_tIf4xG7FHdUzQNrx';
+  const IMAGEN_PERFIL_INICIO = 'https://drive.google.com/uc?export=view&id=1G5mPHHMLTDfISHz7LrtwBc71pEqiEEQc';
 
   function abrirModalCrearContacto() 
   {
@@ -28,7 +28,8 @@
     bootstrap.Modal.getOrCreateInstance(document.getElementById('crearContactoModal')).show();
   }
 
-  function abrirModalModificarContacto(contacto) {
+  function abrirModalModificarContacto(contacto) 
+  {
     //boton modificar
     let boton = document.getElementById('botonCrearModificar');
     boton.textContent = "Modificar Contacto";
@@ -53,4 +54,15 @@
     bootstrap.Modal.getOrCreateInstance(document.getElementById('crearContactoModal')).show();
   }
 
-</script>
+function abrirModalInfoContacto(contacto)
+{
+//obtener datos
+document.getElementById('nombreInfoContacto').textContent = contacto.nombre+' '+contacto.apellidos;
+document.getElementById('correoInfoContacto').textContent = contacto.correo;
+ document.getElementById('telfInfoContacto').textContent = contacto.telf;
+ document.getElementById('imgInfocontacto').src = contacto.imagen;
+
+     //abrir modal
+     bootstrap.Modal.getOrCreateInstance(document.getElementById('infoContactoModal')).show();
+}
+</script>  

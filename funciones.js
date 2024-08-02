@@ -2,7 +2,7 @@ const HOJA = SpreadsheetApp.openById('1rWa_QRZAFIU3sgZA4uHGEHT154XoV0kmGlKadtvTr
 const CARPETA = DriveApp.getFolderById('1nuObTYtuwO48tTY7Cgm17yNxDPshBQVI');
 const CABECERA_URL_IMAGEN_DRIVE = 'https://drive.google.com/uc?export=view&id=';
 
-function doGet()
+function doGet() 
 {
     return HtmlService.createTemplateFromFile('web').evaluate().setTitle('Agenda Google Apps Script');
 }
