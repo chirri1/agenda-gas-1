@@ -17,10 +17,6 @@ const ICONO_CHECK = 'bi-check2-square';
        const LOTTIE_LOADER_NUBE = 'https://assets8.lottiefiles.com/private_files/lf30_m5jf9io.json'
        const LOTTIE_LOADER_AVION_PAPEL = 'https://assets7.lottiefiles.com/packages/lf20_x62chj.json'
 
-
-    ////////////////////
-
-
 function copiarContenido(icono, id)
 {
   let texto = document.getElementById(id).textContent;
@@ -47,32 +43,14 @@ function restaurarIcono(icono)
     bootstrap.Tooltip.getInstance(icono).dispose();
 
   }, 2000);
-
 }
-
-
-
-//////////////////////////////////////////////
-//////////////////////////////////////////////
-//////////////////////////////////////////////
-
-
-
-  function subirArriba()
-  {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTo = 0;
-  }
 
   function limpiar()
   {
    eliminarTarjetas();
    crearLoaderLottie('divContactos',LOTTIE_LOADER_AVION_PAPEL);
   }
-  function mostrar()
-  {
-    crearTarjetas();
-  }
+  
 
 
 function extraerContactos(datos)

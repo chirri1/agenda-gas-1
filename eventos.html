@@ -1,11 +1,9 @@
 <script>
 
-  
-
    //Inicio
    window.addEventListener('load', function()
   {
-   mostrar();
+    crearTarjetas();
   });
 
   //insertar contacto
@@ -14,9 +12,19 @@
   Contacto.nuevo();
 }); 
 
+  //importar contactos
+  document.getElementById('insertarContacto').addEventListener('click', function()
+{
+  importarContacto();
+}); 
+
+
+
+
+
    //eventos botones mostrar contactos
  
-      document.getElementById('tarjetasEstilo1').addEventListener('click', function(event)
+     document.getElementById('tarjetasEstilo1').addEventListener('click', function(event)
    {
     Contacto.aplicarEstilo(Contacto.ESTILO_1);
    });
@@ -49,6 +57,12 @@
       document.getElementById('botonSubir').style.transform = "scale(0)";
     }
   });
+  document.getElementById('botonSubir').addEventListener('click', function()
+{
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTo = 0;
+ 
+});
 
   //cargar imagen
   document.getElementById('imagen').addEventListener("change", function()

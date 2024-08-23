@@ -2,19 +2,13 @@
 
 class Contacto
 {  
-    //ids de las plantillas
-     static get ESTILO_1() {return 'plantillaContacto1';}
-     static get ESTILO_2() {return 'plantillaContacto2';}
-     static get ESTILO_3() {return 'plantillaContacto3';}
-     static get ESTILO_4() {return 'plantillaContacto4';}
-     static get ESTILO_5() {return 'plantillaContacto5';}
-     
+
        static estiloActual = Contacto.ESTILO_1;
 
        static aplicarEstilo(estilo)
 {
       Contacto.estiloActual = estilo;
-      mostrar();
+      crearTarjetas();
 }
 
     constructor(nombre, apellidos, correo, telf, imagen, fila)
